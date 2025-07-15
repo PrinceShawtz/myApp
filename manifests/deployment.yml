@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: zhuopipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zhuopipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: zhuopipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: zhuopipelinesjavascriptdocker 
+          image: mycontainerregistryzchen123.azurecr.io/zhuopipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
