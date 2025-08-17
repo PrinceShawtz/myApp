@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: princeshawtzmyapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: princeshawtzmyapp
+  template:
+    metadata:
+      labels:
+        app: princeshawtzmyapp 
+    spec:
+      containers:
+        - name: princeshawtzmyapp 
+          image: azurecluster.azurecr.io/princeshawtzmyapp
+          ports:
+          - containerPort: 8080
