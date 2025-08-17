@@ -18,5 +18,4 @@ spec:
           ports:
 
           - containerPort: 8080
-      imagePullSecrets:
-        - name: azurecluster1053cd52-auth
+
