@@ -14,11 +14,12 @@ spec:
     spec:
       containers:
         - name: princeshawtzmyapp 
-          image: azurecluster.azurecr.io/princeshawtzmyapp:IMAGE_TAG
+          image: azurecluster.azurecr.io/princeshawtzmyapp:tag
           ports:
 
           - containerPort: 8080
       
+
 
 
 
