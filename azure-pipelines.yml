@@ -50,6 +50,8 @@ stages:
   displayName: Deploy stage
   dependsOn: Build
 
+  
+
   jobs:
   - deployment: Deploy
     condition: and(succeeded(), not(startsWith(variables['Build.SourceBranch'], 'refs/pull/')))
@@ -68,6 +70,7 @@ stages:
             inputs:
               action: deploy
               manifests: |
+                -sed -i "s/IMAGE_TAG/$(tag)/g" deployment.yaml
                 $(Pipeline.Workspace)/manifests/deployment.yml
                 $(Pipeline.Workspace)/manifests/service.yml
               
